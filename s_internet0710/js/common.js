@@ -1,3 +1,46 @@
+// common ui
+// tab
+const bindTabEvents = ($tabs, $tabBtn, $panels) => {
+  const tabKey = $tabBtn.dataset.tab;
+
+  const $tabBtns = $tabs.querySelectorAll('[data-tab]');
+  const $tabPanels = $panels.querySelectorAll('[data-panel]');
+
+  $tabBtns.forEach(($btn) => {
+    $btn.classList.remove('card__tab--active');
+  });
+
+  $tabPanels.forEach(($panel) => {
+    $panel.classList.remove('card__tab-panel--active');
+  });
+
+  $tabBtn.classList.add('card__tab--active');
+
+  const $targetPanel = $panels.querySelector(`[data-panel="${CSS.escape(tabKey)}"]`);
+
+  if ($targetPanel) {
+    $targetPanel.classList.add('card__tab-panel--active');
+  }
+};
+
+(() => {
+  const $tabsWraps = document.querySelectorAll('[data-tabs-wrap]');
+  if (!$tabsWraps.length) return;
+
+  $tabsWraps.forEach(($tabsWrap) => {
+    const $tabs = $tabsWrap.querySelector('[data-tabs]');
+    const $tabBtns = $tabsWrap.querySelectorAll('[data-tab]');
+    const $panels = $tabsWrap.querySelector('[data-panels]');
+    // bind
+    $tabBtns.forEach(($tabBtn) => {
+      $tabBtn.addEventListener('click', () => {
+        console.log('asd');
+        bindTabEvents($tabs, $tabBtn, $panels);
+      });
+    });
+  });
+})();
+
 /* nav */
 const navLinks = document.querySelectorAll('.nav_wrap a');
 
