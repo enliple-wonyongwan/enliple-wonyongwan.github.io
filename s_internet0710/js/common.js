@@ -34,7 +34,6 @@ const bindTabEvents = ($tabs, $tabBtn, $panels) => {
     // bind
     $tabBtns.forEach(($tabBtn) => {
       $tabBtn.addEventListener('click', () => {
-        console.log('asd');
         bindTabEvents($tabs, $tabBtn, $panels);
       });
     });
