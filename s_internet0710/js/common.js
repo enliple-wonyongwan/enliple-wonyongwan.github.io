@@ -336,7 +336,7 @@ if (tPopCloseRight.length > 0) {
     tPop.style.transform = 'translate(-50%, -20px)';
 
     setTimeout(() => {
-      tPop.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+      tPop.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
       tPop.style.opacity = '1';
       tPop.style.transform = 'translate(-50%, 50px)';
     }, 30);
@@ -348,12 +348,12 @@ if (tPopCloseRight.length > 0) {
         tPop.style.transform = `translate(calc(-50% + ${dx}px), 15px)`;
       }
       tPop.style.opacity = '0';
-      tPop.style.transition = 'transform .6s ease, opacity .6s ease .2s';
+      tPop.style.transition = 'transform .3s ease, opacity .3s ease .2s';
 
       setTimeout(() => {
         tPop.remove();
       }, 800);
-    }, 2500);
+    }, 1500);
   });
 }
 
